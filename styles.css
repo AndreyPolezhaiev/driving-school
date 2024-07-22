@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #F5F5DC; /* Бежевый фон */
+}
+
+header {
+    background: #0057B7; /* Синий фон */
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 0rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.section {
+    padding: 2rem 0;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+p, ul {
+    text-align: justify; /* Выровнять текст по ширине */
+    margin-bottom: 1rem;
+    padding: 0 3rem; /* Добавляем отступы */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+    text-align: justify; /* Выровнять текст по ширине */
+    padding: 0 3rem; /* Добавляем отступы */
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+footer p, footer ul {
+    text-align: center; /* Выровнять текст по центру */
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+.active {
+    background-color: #FFD700; /* Золотистый цвет для выделения */
+}
+
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 1rem 0;
+    }
+}
