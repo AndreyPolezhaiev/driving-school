@@ -1,42 +1,61 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+html {
+  background-color: #F5F5DC; 
+  scroll-behavior: smooth;
+  margin: 0;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    margin: 0;
+    font-family: sans-serif;
     color: #333;
-    background: #F5F5DC; /* Бежевый фон */
+    --header-height: 95px;
+    --footer-height: 50px;
 }
 
-header {
-    background: #0057B7; /* Синий фон */
-    color: #fff;
-    padding: 1rem 0;
+.header {
+    background: #0057B7;
+    margin: 0 auto;
+    height: var(--header-height);
 }
+
+.header h1 {
+  color: #fff;
+  margin: 0;
+  padding: 10px 0 15px 0;
+}
+
+.nav {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.nav__link {
+  color: #fff;
+  text-decoration: none;
+  padding: 0 20px;
+}
+
+.nav__link:hover {
+  background-color: #827676;
+  color: black;
+}
+
+.nav__link:active {
+  color: red;
+}
+
+.section:target {
+  background-color: #FFD700;
+}
+
+.main {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+} 
 
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-}
-
-nav ul {
-    list-style: none;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 0rem;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
 }
 
 .section {
@@ -49,9 +68,9 @@ h1, h2, h3 {
 }
 
 p, ul {
-    text-align: justify; /* Выровнять текст по ширине */
+    text-align: justify; 
     margin-bottom: 1rem;
-    padding: 0 3rem; /* Добавляем отступы */
+    padding: 0 3rem;
 }
 
 ul {
@@ -61,8 +80,8 @@ ul {
 
 ul li {
     margin-bottom: 0.5rem;
-    text-align: justify; /* Выровнять текст по ширине */
-    padding: 0 3rem; /* Добавляем отступы */
+    text-align: justify;
+    padding: 0 3rem;
 }
 
 footer {
@@ -70,28 +89,6 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem 0;
-}
-
-footer p, footer ul {
-    text-align: center; /* Выровнять текст по центру */
-}
-
-footer ul {
-    list-style: none;
-    padding: 0;
-}
-
-footer ul li {
-    margin-bottom: 0.5rem;
-}
-
-.active {
-    background-color: #FFD700; /* Золотистый цвет для выделения */
-}
-
-@media (max-width: 768px) {
-    nav ul li {
-        display: block;
-        margin: 1rem 0;
-    }
+    height: var(--footer-height);
+    line-height: var(--footer-height);
 }
