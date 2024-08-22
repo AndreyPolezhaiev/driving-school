@@ -1,32 +1,38 @@
 html {
   background-color: rgb(245, 246, 250); 
   scroll-behavior: smooth;
+  height: 100%;
   margin: 0;
 }
 
 body {
-    margin: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
     font-family: sans-serif;
     color: #333;
-    --header-height: 60px;
-    --footer-height: 80px;
+    --min-header-height: 60px;
+    --min-footer-height: 80px;
+    min-height: 100vh;
+    max-width: 1200px;
+    background-color: #333;
 }
 
 .header {
+    padding: 0;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
-    height: var(--header-height);
-    line-height:  var(--header-height);
+    align-items: center;
+    min-height: var(--min-header-height);
     background-color: #0057B7;
 }
 
 .logo {
   padding: 0 10px;
+  height: var(--min-header-height);
 }
 
 .nav {
-  text-align: center;
   padding: 0 50px;
 }
 
@@ -47,25 +53,41 @@ body {
 }
 
 .main {
-  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  flex: 1;
+  min-height: calc(100vh - var(--min-header-height) - var(--footer-height));
 } 
 
 .section {
-  padding-top: 10px;
   text-align: center;
 }
 
-.section:last-child {
-  padding-bottom: 10px;
+.section:not(:last-child) {
+  padding-bottom: 3px;
 }
 
-.container:target {
+.section:first-child {
+  padding-top: 0;
+}
+
+.section:last-child {
+  padding-bottom: 0;
+}
+
+.highlight {
+  display: inline-block;
+  padding: 4px 20px;
+  border-radius: 10px;
+}
+
+.highlight:target {
   animation: highlight 3s forwards;
 }
 
+/* #FFD700 */
+
 @keyframes highlight {
   0% {
-    background-color: #FFD700;
+    background-color: #de9393;
   }
   100% {
     background-color: #fff;
@@ -73,12 +95,8 @@ body {
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
     background-color: #fff;
     padding: 20px 0;
-    border-radius: 20px;
 }
 
 p, ul {
@@ -104,6 +122,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem 0;
-    height: var(--footer-height);
-    line-height: var(--footer-height);
+    min-height: var(--min-footer-height);
+    line-height: var(--min-footer-height);
+    border-top: 3px solid #fff;
 }
