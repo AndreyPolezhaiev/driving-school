@@ -54,7 +54,7 @@ body {
 
 .main {
   flex: 1;
-  min-height: calc(100vh - var(--min-header-height) - var(--footer-height));
+  min-height: calc(100vh - var(--min-header-height) - var(--min-footer-height));
 } 
 
 .section {
@@ -126,3 +126,25 @@ footer {
     line-height: var(--min-footer-height);
     border-top: 3px solid #fff;
 }
+
+@media (max-width <= 907) {
+  body {
+    --header-height: 60px;
+    --footer-height: 80px;
+  }
+
+  .header {
+    height: --header-height;
+    line-height: var(--header-height);
+  }
+
+  .main {
+    flex: 1;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  } 
+
+  footer {
+    height: var(--footer-height);
+    line-height: var(--footer-height);
+  }
+} 
