@@ -125,26 +125,116 @@ footer {
     min-height: var(--min-footer-height);
     line-height: var(--min-footer-height);
     border-top: 3px solid #fff;
-}
+} 
 
-@media (max-width <= 907) {
+@media (max-width: 768px) {
+  html {
+    background-color: rgb(245, 246, 250); 
+    scroll-behavior: smooth;
+    margin: 0;
+  }
+  
   body {
-    --header-height: 60px;
-    --footer-height: 80px;
+      margin: 0;
+      font-family: sans-serif;
+      color: #333;
+      --header-height: 60px;
+      --footer-height: 80px;
   }
-
+  
   .header {
-    height: --header-height;
-    line-height: var(--header-height);
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      height: var(--header-height);
+      line-height:  var(--header-height);
+      background-color: #0057B7;
   }
-
+  
+  .logo {
+    padding: 0 10px;
+  }
+  
+  .nav {
+    text-align: center;
+    padding: 0 50px;
+  }
+  
+  .nav__link {
+    color: #fff;
+    text-decoration: none;
+    padding: 2px 20px;
+  }
+  
+  .nav__link:hover {
+    background-color: #827676;
+    color: black;
+    border-radius: 5px;
+  }
+  
+  .nav__link:active {
+    color: red;
+  }
+  
   .main {
-    flex: 1;
     min-height: calc(100vh - var(--header-height) - var(--footer-height));
   } 
-
-  footer {
-    height: var(--footer-height);
-    line-height: var(--footer-height);
+  
+  .section {
+    padding-top: 10px;
+    text-align: center;
   }
-} 
+  
+  .section:last-child {
+    padding-bottom: 10px;
+  }
+  
+  .container:target {
+    animation: highlight 3s forwards;
+  }
+  
+  @keyframes highlight {
+    0% {
+      background-color: #FFD700;
+    }
+    100% {
+      background-color: #fff;
+    }
+  }
+  
+  .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px 0;
+      border-radius: 20px;
+  }
+  
+  p, ul {
+      text-align: justify; 
+      margin-bottom: 1rem;
+      padding: 0 3rem;
+  }
+  
+  ul {
+      list-style-type: none;
+      padding: 0;
+  }
+  
+  ul li {
+      margin-bottom: 0.5rem;
+      text-align: justify;
+      padding: 0 3rem;
+  }
+  
+  footer {
+      background: #333;
+      font-size: 1.5rem;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      height: var(--footer-height);
+      line-height: var(--footer-height);
+  }
+}
